@@ -1,0 +1,117 @@
+body {
+    width: 360px;
+    height: 430px;
+}
+
+h1 {
+    font-size: large;
+    font: bold;
+}
+
+h2 {
+    font-size: large;
+    font: bold;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 360px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.card-body {
+    height: 430px;
+    padding: 0px;
+}
+
+.btn-top {
+    position: absolute;
+    top: 2px;
+    font-size: larger;
+    color: rgba(0, 0, 0, 0.625);
+}
+
+.l-10 {
+    left: 10px;
+}
+
+.r-10 {
+    right: 10px;
+}
+
+form {
+    margin: 0px;
+    padding: 0px;
+}
+
+.card-setting {
+    margin: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.ft-ic > a {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: large;
+}
+
+textarea {
+    resize: none;
+}
+
+.fa-plus-circle {
+    font-size: large;
+    cursor: pointer;
+    color: #007bff;
+}
+
+#qrcode>img {
+    margin-top: 10px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 14px;
+    transition: 0.3s;
+    font-size: medium;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+}
