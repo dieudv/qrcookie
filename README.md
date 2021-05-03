@@ -21,11 +21,11 @@ python3 -m pip install -r requirements.txt
 
 Open cmd on Window and run this command.
 
-```Debug
+```bash
 build.bat debug chrome
 ```
 or
 
-```Release
+```bash
 build.bat release chrome
 ```
