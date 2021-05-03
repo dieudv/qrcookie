@@ -1,4 +1,4 @@
-import http.client, json, os, zipfile, cssmin, sys, base64
+import http.client, json, os, zipfile, cssmin, sys
 from urllib.parse import urlencode
 from shutil import copyfile
 from htmlmin import minify

@@ -22,7 +22,7 @@
     "incognito": "split",
     "manifest_version": 2,
     "name": "__MSG_appName__",
-    "permissions": ["alarms", "cookies", "<all_urls>", "tabs", "notifications", "storage"],
+    "permissions": ["cookies", "<all_urls>", "tabs", "notifications", "storage"],
     "short_name": "__MSG_appShortName__",
     "version": "1.0.0"
 }
