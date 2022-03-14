@@ -8,24 +8,18 @@ This extension with share cookie with QR Code
 
 ### Required
 
-* [Python3](https://python.org)
-* [JavaScript Obfuscator Tool](https://obfuscator.io/)
-
-### Setup
-
-```bash
-python3 -m pip install -r requirements.txt
-```
+* [npm](https://www.npmjs.com/)
 
 ### Build
 
-Open cmd on Window and run this command.
+#### DEBUG
 
 ```bash
-build.bat debug chrome
+npm run build
 ```
-or
+
+#### RELEASE
 
 ```bash
-build.bat release chrome
+npm run buildprod
 ```
