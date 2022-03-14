@@ -1,0 +1,37 @@
+{
+  "name": "qrcookie",
+  "version": "1.0.1",
+  "description": "This extension with share cookie with QR Code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "buildw": "webpack -w",
+    "buildprod": "NODE_ENV=prod webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dieudv/qrcookie.git"
+  },
+  "author": "Lzdev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dieudv/qrcookie/issues"
+  },
+  "homepage": "https://github.com/dieudv/qrcookie#readme",
+  "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.2.4",
+    "css-loader": "^6.7.1",
+    "html-minimizer-webpack-plugin": "^3.5.0",
+    "json-minimizer-webpack-plugin": "^3.3.0",
+    "qrcode": "^1.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.70.0",
+    "webpack-obfuscator": "^3.5.1",
+    "zip-webpack-plugin": "^4.0.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.9.2"
+  }
+}

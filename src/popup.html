@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>__MSG_appName__</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css" integrity="sha512-8Vtie9oRR62i7vkmVUISvuwOeipGv8Jd+Sur/ORKDD5JiLgTGeBSkI3ISOhc730VGvA5VVQPwKIKlmi+zMZ71w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" integrity="sha512-6/gTF62BJ06BajySRzTm7i8N2ZZ6StspU9uVWDdoBiuuNu5rs1a8VwiJ7skCz2BcvhpipLKfFerXkuzs+npeKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/brands.min.css" integrity="sha512-bSncow0ApIhONbz+pNI52n0trz5fMWbgteHsonaPk42JbunIeM9ee+zTYAUP1eLPky5wP0XZ7MSLAPxKkwnlzw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="popup.js" defer></script>
+</head>
+
+<body>
+    <div class="card border-light mb-3">
+        <div class="card-body">
+            <div class="tab">
+                <button class="tablinks" id="tabQr">QR Code</button>
+                <button class="tablinks" id="tabFormat">Format</button>
+            </div>
+            <div id="qrcontent" class="tabcontent text-center">
+                <img id="qrcode" class="mx-auto my-4" />
+                <div class="form-group">
+                    <div id="qrtext-div" style="display: none;">
+                        <textarea id="qrtext" cols="40" rows="10" class="form-control my-4"></textarea>
+                    </div>
+                    <button class="btn btn-secondary" id="btn-switch-view">View text</button>
+                </div>
+            </div>
+            <div id="format" class="tabcontent">
+                <div class="form-group mx-3">
+                    <div class="row">
+                        <textarea id="ccformat" cols="40" rows="5" class="form-control my-3">{cookie}|{user-agent}</textarea>
+                    </div>
+                    <div class="row">
+                        <button class="col btn btn-outline-secondary btn-sm">{cookie}</button>
+                        <button class="col btn btn-outline-secondary btn-sm mx-1">{user-agent}</button>
+                        <button class="col btn btn-outline-secondary btn-sm">{domain}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <div class="row">
+                <div class="col ft-ic">
+                    <a href="https://lzdev.org" title="Lzdev Home" target="_blank"><i class="fas fa-home"></i></a>
+                    <a href="https://fb.com/lzdev.org" title="Facebook" class="mx-3" target="_blank"><i class="fa-brands fa-facebook-square"></i></a>
+                </div>
+                <div class="col text-end">
+                    <small id="version"></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
