@@ -1,5 +1,3 @@
-'use strict';
-
 import '../style.css';
 
 var QRCode = require('qrcode')
@@ -77,9 +75,10 @@ for (let i = 0; i < btns.length; i++) {
 }
 
 function cookieinfo() {
-    console.log("cookieinfo");
     chrome.tabs.query({ "status": "complete", "windowId": chrome.windows.WINDOW_ID_CURRENT, "active": true }, function (tab) {
-        console.log(tab);
+
+        if (tab[0] == undefined) return;
+
         chrome.cookies.getAll({ "url": tab[0].url }, function (cookie) {
             let allCookieInfo = "";
             let domain = "";

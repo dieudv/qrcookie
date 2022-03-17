@@ -1,15 +1,17 @@
-var debug = process.env.NODE_ENV !== "prod";
-
+const devMode = process.env.NODE_ENV !== "prod";
 const path = require('path');
 
 let package = require('./package.json');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
-const WebpackObfuscator = require('webpack-obfuscator');
 const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
 const JsonMinimizerPlugin = require("json-minimizer-webpack-plugin");
 const ZipPlugin = require('zip-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
 
 String.prototype.replaceAll = function (search, replacement) {
     var target = this;
@@ -48,12 +50,12 @@ var copyPatterns = [
 ];
 
 module.exports = {
-    mode: debug ? 'development' : 'production',
+    mode: devMode ? 'development' : 'production',
     resolve: {
         extensions: ['.js']
     },
     context: __dirname + "/src",
-    devtool: 'source-map',
+    devtool: devMode ? 'source-map' : false,
     entry: {
         background: "./js/background.js",
         popup: "./js/popup.js",
@@ -67,37 +69,36 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: { import: true },
-                    }
-                ],
+                    MiniCssExtractPlugin.loader,
+                    'css-loader'
+                ]
             },
         ],
     },
-    plugins: debug ? [
+    plugins: devMode ? [
         new CleanWebpackPlugin(),
         new CopyPlugin({ patterns: copyPatterns }),
+        new MiniCssExtractPlugin({
+            filename: 'style.css'
+        }),
     ] : [
         new CleanWebpackPlugin(),
         new CopyPlugin({ patterns: copyPatterns }),
-        new WebpackObfuscator({
-            identifierNamesGenerator: 'mangled-shuffled',
-            target: "browser-no-eval",
-            stringArray: false,
-            splitStrings: false,
-            stringArrayEncoding: ['rc4']
+        new MiniCssExtractPlugin({
+            filename: 'style.css'
         }),
         new ZipPlugin({
             filename: `${package.name}-${package.version}`,
+            exclude: [/\.map$/],
         })
     ],
     optimization: {
-        minimize: debug ? false : true,
+        minimize: devMode ? false : true,
         minimizer: [
             new HtmlMinimizerPlugin(),
             new JsonMinimizerPlugin(),
-        ]
+            new CssMinimizerPlugin(),
+            new TerserPlugin(),
+        ],
     },
 };
